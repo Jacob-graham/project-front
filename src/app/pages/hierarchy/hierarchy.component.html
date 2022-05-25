@@ -1,0 +1,29 @@
+
+
+<div *ngIf="showLoader">
+  <zi-loader></zi-loader>
+</div>
+
+<div class="container">
+
+  <div class="container-left">
+    <zi-button (click)="goBackButtonClick()">
+      <span>Go Back</span>
+    </zi-button>
+  </div>
+
+  <div class="container-right">
+    <div class="empty-state" *ngIf="emptyState.show">
+      {{emptyState.text}}
+    </div>
+    <div class="container-right-item" *ngFor="let member of hierarchy; let i = index;">
+
+      <zi-info-card [identity]="member"></zi-info-card>
+
+      <img *ngIf="i < (hierarchy.length - 1)" class="arrow" src="./assets/images/pngwave.png"/>
+    </div>
+  </div>
+
+</div>
+
+

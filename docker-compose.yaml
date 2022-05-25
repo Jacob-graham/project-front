@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  frontend:
+    ports:
+      - "3000:3000"
+    build:
+      context: .
+      args:
+        - ARTIFACTORY_USERNAME=${ARTIFACTORY_USR}
+        - ARTIFACTORY_PASSWORD=${ARTIFACTORY_PSW}
+    networks:
+      - zoom-family-network
+
+networks:
+  zoom-family-network:
+    external:
+      name: zoom-family-network

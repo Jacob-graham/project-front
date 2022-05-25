@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div class="container-top">
+    <h1 class="header">{{selectedMember?.label ? selectedMember?.label : 'Please select a member'}}</h1>
+  </div>
+
+  <div class="container-bottom">
+    <zi-list
+      [headerText]="'Members'"
+      [showLoader]="isLoading"
+      items="{{ listItems$ | async }}"
+      (itemSelected)="memberSelected($event)" >
+    </zi-list>
+  </div>
+
+</div>

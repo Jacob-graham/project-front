@@ -1,0 +1,28 @@
+@import '../../../styles/base';
+
+:host {
+  overflow: auto;
+  margin-top: $distance-from-nav-bar;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.15fr 1fr;
+  grid-template-rows: auto auto;
+  grid-column-gap: 70px;
+
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+
+  &-right {
+    &-item {
+      @include flex($align-items: center, $flex-direction: column);
+
+      .arrow {
+        margin: 15px 0;
+        width: 70px;
+      }
+    }
+  }
+}

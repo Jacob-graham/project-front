@@ -1,0 +1,20 @@
+
+<div *ngIf="!identity" class="container empty-state">
+  Please select one of the members
+</div>
+
+<div *ngIf="identity" class="container">
+  <div class="container-top">
+    <div class="container-top-left">
+      <img src="/assets/images/person-placeholder-portrait.png" alt="logo" class="container-img">
+    </div>
+    <div class="container-top-right">
+      <p>{{identity.id}} - {{identity.name}}</p>
+    </div>
+  </div>
+  <div class="container-bottom">
+    <p [innerHTML]="identity.description"></p>
+    <!--  ng-content to inject content below description  -->
+    <ng-content select="[below_description]"></ng-content>
+  </div>
+</div>
